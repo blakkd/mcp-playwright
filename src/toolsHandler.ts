@@ -20,7 +20,7 @@ type ViewportSize = {
 
 async function ensureBrowser(viewport?: ViewportSize) {
   if (!browser) {
-    browser = await chromium.launch({ headless: false });
+    browser = await chromium.launch({ headless: true });
     const context = await browser.newContext({
       viewport: {
         width: viewport?.width ?? 1920,
